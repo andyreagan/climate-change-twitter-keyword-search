@@ -1,0 +1,9 @@
+#PBS -l nodes=1:ppn=1
+#PBS -l walltime=1:00:00
+#PBS -N emilyKeywordScrape
+#PBS -j oe
+
+cd /users/a/r/areagan/fun/twitter/keyword-searches/emily
+
+/usr/bin/time -v gzip -cd /users/c/d/cdanfort/scratch/twitter/tweet-troll/zipped-raw/2014-04-24/2014-04-24-00-00.gz | python processTweetsNew.py "2014-04-24-00-00"
+# /usr/bin/time -v gzip -cd /users/c/d/cdanfort/scratch/twitter/tweet-troll/zipped-raw/${TDATE}.tgz | python processTweets.py ${PDATE}
